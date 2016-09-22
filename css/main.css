@@ -1,0 +1,55 @@
+* {
+	box-sizing: border-box;
+	font-family: "Lobster Two";
+}
+
+body {
+	background-color: #4FD759;
+}
+
+#tarjetas {
+	margin-left: 4%;
+	margin-top: 4%;
+}
+
+#span {
+	padding: 1%;
+	background-color: #14B018;
+	display: inline-block;
+	width: 20%;
+	height: 5%;
+	border-radius: 0.4em;
+	color: rgba(0, 0, 0, 0.6);
+}
+
+#span:hover {
+	background-color: #1AA41A;
+}
+
+.botonCreado {
+	display: inline-block;
+	margin: 1% 0;
+	width: 30%;
+	height: 2%;
+	padding: 1.5%;
+	background-color: #5EB64B;
+	border: none;
+	border-radius: 0.4em;
+	color: #FFF;
+}
+
+.contenedorCreado {
+	display: inline-block;
+	padding: 1%;
+	background-color: #E2E4E6;
+	border-radius: 0.4em;
+}
+
+.inputCreado {
+	background-color: #D4D6D8;
+	width: 100%;
+	border-radius: 0.4em;
+	border: none;
+	height: 3em;
+	margin-bottom: 1%;
+}
