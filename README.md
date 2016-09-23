@@ -60,4 +60,13 @@ Pero se debe ver algo así:
 ![trello](http://i68.tinypic.com/30njgqp.png)
 
 
+### VERSIÓN 0.0.5
+
++ Al dar click en el botón de guardar al momento de añadir tarjeta, mostrar el mensaje de "Añadir tarjeta" debajo de la tarjeta añadida.
+
+
+### VERSIÓN 0.0.6 (EXTRA)
+
++ Asegurar la funcionalidad de poder agregar múltiples listas y tarjetas.
+
 ***
