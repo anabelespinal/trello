@@ -1,10 +1,13 @@
 window.addEventListener("load", function() {
-var span = document.getElementById("span")
- span.addEventListener("click", function(e) {
+var span = document.getElementById("span");
+var tarjetas = document.getElementById("tarjetas");
+var seccion = document.getElementById("seccion");
+ span.addEventListener("click", function() {
     tarjetasNuevas(); 
   })
   function tarjetasNuevas(){
     var formCreado = document.createElement("form");
+    formCreado.setAttribute("id","formularioCreado")
     var inputCreado = document.createElement("input");
     var botonCreado = document.createElement("button");
       function anadirTarjetas(){
@@ -12,7 +15,7 @@ var span = document.getElementById("span")
 
         tarjetas.insertBefore(formCreado, tarjetas.childNodes[0]);
 
-        inputCreado.placeholder = "añadir una lista";
+        inputCreado.placeholder = "añadir una lista...";
         formCreado.insertBefore(inputCreado, formCreado.childNodes[0]).classList.add("inputCreado");
 
         var texto = document.createTextNode("Guardar");
@@ -26,9 +29,8 @@ var span = document.getElementById("span")
         anadirTarjetas();
         botonCreado.addEventListener("click",function(e){
           e.preventDefault();
-
+// version 2
           formCreado.style.display = "none";
-          tarjetas.removeAttribute("class","contenedorCreado")
           var valueTarjetas = inputCreado.value;
           var tarjetaNombre = document.createElement("span");
           tarjetaNombre.setAttribute("class", "nombreTarjeta");
@@ -38,16 +40,32 @@ var span = document.getElementById("span")
           newboton.innerText = "añadir tarjeta";
           newboton.setAttribute("class","buttonDos");
           tarjetas.insertBefore(newboton, tarjetas.childNodes[1]);
-      });
+          newtar();  
+        });
+          function newtar(){
+            span.style.display = "inline-block";
+            contenedorNuevo = document.createElement("div");
+            // contenedorNuevo.style.cssFloat = "left";
+            contenedorNuevo.setAttribute("class", "nuevoContenedor");
+            contenedorNuevo.insertBefore(formCreado, contenedorNuevo.childNodes[0]);
+            contenedorNuevo.insertBefore(span, contenedorNuevo.childNodes[0]);
 
+            inputCreado.placeholder = "añadir una lista...";
+            formCreado.insertBefore(inputCreado, formCreado.childNodes[0]).classList.add("inputCreado");
+
+            var texto = document.createTextNode("Guardar");
+            botonCreado.appendChild(texto);
+            formCreado.insertBefore(botonCreado, formCreado.childNodes[1]).classList.add("botonCreado");
+            seccion.appendChild(contenedorNuevo);
+            span.addEventListener("click",  function(){
+              var formHtml = document.getElementById("repeticion");
+              formHtml.style.display = "inline-block";
+              // formHtml.style.marginTop = "-10em";
+            })
+          }
+// spanForm.parentNode.insertBefore(newTarjeta,spanForm.previousSibling)
       }
-      botonGuardar();
+      botonGuardar();;
   };
 
-});     
-          // function nuevoanadir(tarjetasNuevas){
-          //   botonGuardar();
-          //   var nuevatarjeta = document.createElement("span");
-          //   nuevatarjeta.setAttribute("class", "span");
-          //   tarjetas.insertBefore(nuevatarjeta, tarjetas.childNodes[1])
-          // };   
+});  
