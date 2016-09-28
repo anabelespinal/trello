@@ -1,71 +1,73 @@
-window.addEventListener("load", function() {
-var span = document.getElementById("span");
-var tarjetas = document.getElementById("tarjetas");
-var seccion = document.getElementById("seccion");
- span.addEventListener("click", function() {
-    tarjetasNuevas(); 
-  })
-  function tarjetasNuevas(){
-    var formCreado = document.createElement("form");
-    formCreado.setAttribute("id","formularioCreado")
-    var inputCreado = document.createElement("input");
-    var botonCreado = document.createElement("button");
-      function anadirTarjetas(){
-        span.style.display = "none";
+window.addEventListener("load", function(){
+  var contenedor = document.getElementById("contenedor");
+  var anadirLista = document.getElementById("anadirLista");
+  var formCreado = document.getElementById("formCreado");
+  var inputCreado = document.getElementById("inputCreado");
+  var botonCreado = document.getElementById("botonCreado");
+  var tarjetasContenedor = document.getElementById("tarjetasContenedor");
 
-        tarjetas.insertBefore(formCreado, tarjetas.childNodes[0]);
+  anadirLista.addEventListener("click", function(){
+    aparecerForm();
+  });
 
-        inputCreado.placeholder = "añadir una lista...";
-        formCreado.insertBefore(inputCreado, formCreado.childNodes[0]).classList.add("inputCreado");
+  function aparecerForm(){
+    anadirLista.style.display = "none";
+    formCreado.style.display = "inline-block";
+    inputCreado.focus();
+  }
 
-        var texto = document.createTextNode("Guardar");
-        botonCreado.appendChild(texto);
-        formCreado.insertBefore(botonCreado, formCreado.childNodes[1]).classList.add("botonCreado");
+  botonCreado.addEventListener("click", function(e){
+    e.preventDefault();
+    formCreado.style.display = "none";
+    var nombreLista = document.createElement("span");
+    var anadirTarjeta = document.createElement("button");
+    nombreLista.innerText = inputCreado.value;
+  
+    nombreLista.setAttribute("id", "nombreLista")
+    anadirTarjeta.innerText = "añadir tarjetas";
+    anadirTarjeta.setAttribute("id", "anadirTarjeta");
+    anadirLista.parentElement.appendChild(nombreLista);
+    anadirLista.parentElement.appendChild(anadirTarjeta);
+    inputCreado.value = "";
 
-        tarjetas.classList.add("contenedorCreado");
-      }
+    nuevoDiv();
 
-      function botonGuardar(){
-        anadirTarjetas();
-        botonCreado.addEventListener("click",function(e){
-          e.preventDefault();
-// version 2
-          formCreado.style.display = "none";
-          var valueTarjetas = inputCreado.value;
-          var tarjetaNombre = document.createElement("span");
-          tarjetaNombre.setAttribute("class", "nombreTarjeta");
-          tarjetas.insertBefore(tarjetaNombre, tarjetas.childNodes[0]);
-          tarjetaNombre.innerText = valueTarjetas;
-          var newboton = document.createElement("button");
-          newboton.innerText = "añadir tarjeta";
-          newboton.setAttribute("class","buttonDos");
-          tarjetas.insertBefore(newboton, tarjetas.childNodes[1]);
-          newtar();  
-        });
-          function newtar(){
-            span.style.display = "inline-block";
-            contenedorNuevo = document.createElement("div");
-            // contenedorNuevo.style.cssFloat = "left";
-            contenedorNuevo.setAttribute("class", "nuevoContenedor");
-            contenedorNuevo.insertBefore(formCreado, contenedorNuevo.childNodes[0]);
-            contenedorNuevo.insertBefore(span, contenedorNuevo.childNodes[0]);
+    anadirTarjeta.addEventListener("click", function(){
+      anadirTarjeta.style.display = "none";
+      var contenedorTarjetas = document.createElement("div");
+      anadirTarjeta.parentElement.appendChild(contenedorTarjetas);
+      contenedorTarjetas.setAttribute("class", "contenedorTarjetas");
+      var newForm = document.createElement("form");
+      contenedorTarjetas.appendChild(newForm);
+      newForm.setAttribute("class","newForm")
+      var textArea = document.createElement("textarea");
+      newForm.appendChild(textArea);
+      textArea.focus();
+      textArea.setAttribute("class", "textArea")
+      var boton = document.createElement("button");
+      newForm.appendChild(boton);
+      boton.setAttribute("class", "boton");
+      boton.innerText = "GUARDAR";
 
-            inputCreado.placeholder = "añadir una lista...";
-            formCreado.insertBefore(inputCreado, formCreado.childNodes[0]).classList.add("inputCreado");
+      boton.addEventListener("click", function(e){
+        e.preventDefault();
+        newForm.style.display = "none";
+        var newTarjeta = document.createElement("span");
+        newTarjeta.innerText = textArea.value
+        contenedorTarjetas.appendChild(newTarjeta);
+        contenedorTarjetas.parentElement.appendChild(anadirTarjeta);
+        newTarjeta.setAttribute("class", "newTarjeta");
+        anadirTarjeta.style.display = "inline-block";
+      })
+    });
+  });
 
-            var texto = document.createTextNode("Guardar");
-            botonCreado.appendChild(texto);
-            formCreado.insertBefore(botonCreado, formCreado.childNodes[1]).classList.add("botonCreado");
-            seccion.appendChild(contenedorNuevo);
-            span.addEventListener("click",  function(){
-              var formHtml = document.getElementById("repeticion");
-              formHtml.style.display = "inline-block";
-              // formHtml.style.marginTop = "-10em";
-            })
-          }
-// spanForm.parentNode.insertBefore(newTarjeta,spanForm.previousSibling)
-      }
-      botonGuardar();;
-  };
-
-});  
+  function nuevoDiv(){
+    var newDiv = document.createElement("div");
+    contenedor.appendChild(newDiv);
+    newDiv.setAttribute("class", "newDiv")
+    newDiv.appendChild(anadirLista);
+    newDiv.appendChild(formCreado);
+    anadirLista.style.display = "inline-block"
+  }
+});
