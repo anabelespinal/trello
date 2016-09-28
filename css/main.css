@@ -26,6 +26,77 @@ body {
 	background-color: #38E35C;
 }
 
+/*header*/
+
+header {
+	background-color: #1EB13D;
+	height: 5em;
+}
+
+.tableros {
+	margin: 1%;
+}
+
+header form {
+	display: inline-block;
+}
+
+header form input {
+	background-color: #3CD05F;
+	margin-top: 1%;
+	width: 130%;
+	padding: 0.7em 1%;
+	border-radius: 0.5em;
+	border: none;
+}
+
+.buscar{
+	position: relative;
+	display: inline-block;
+	right: -1.5em;
+}
+
+.trello-logo {
+	display: inline-block;
+	position: relative;
+	left: 22%;
+	width: 9%;
+}
+
+.trello-logo:hover {
+	width: 10%;
+}
+
+.mas {
+	position: relative;
+	left: 41em;
+}
+
+.perfil {
+	display: inline-block;
+	position: relative;
+	left: 42%;
+}
+
+.foto-perfil {
+	display: inline-block;
+	width: 3em;
+	height: 2.5em;
+	margin-right: -3.2em;
+}
+
+.ico {
+	position: relative;
+	left: 46%;
+}
+
+.globe {
+	background-color: #EF4949;
+	position: relative;
+	left: 46%;
+}
+
+
 /*contenedor general*/
 
 #contenedor {

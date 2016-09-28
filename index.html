@@ -5,10 +5,27 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/ico.ico" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
   <body>
+    <header>
+      <button class="tableros btn-success btn "><i class="glyphicon glyphicon-edit"></i>Tableros</button>
+      <form>
+        <input type="text" name="buscador">
+      </form>
+      <i class="glyphicon glyphicon-search buscar"></i>
+      <img src="img/trello.png"  class="trello-logo">
+      <button class="mas btn-success btn"><i class="glyphicon glyphicon-plus"></i></button>
+      <div class="perfil">
+        <img src="img/perfil.jpg" class="foto-perfil">
+        <button class="perfil btn-success btn">anabel espinal</button>
+      </div>
+      <button class="btn-success btn ico"><i class="glyphicon glyphicon-info-sign"></i></button>
+      <button class="btn-success btn globe"><i class="glyphicon glyphicon-globe"></i></button>
+    </header>
+
     <div id="contenedor">
       <div id="tarjetasContenedor">
         <span id="anadirLista">Añadir una lista...</span>    
@@ -18,6 +35,7 @@
         </form>
       </div>
     </div>
+
 
     <script  type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
