@@ -128,6 +128,7 @@ header form input {
 	background-color: #2FC332;
 	padding: 3% 20%;
 	border-radius: 0.5em;
+	cursor: pointer;
 }
 
 /*formulario*/
@@ -223,13 +224,18 @@ header form input {
 .newTarjeta {
 	background-color: #F3EDED;
 	width: 100%;
-	display: inline-block;
+	display: block;
 	height: auto;
 	padding: 2%;
+	margin-top: 0.5em;
 }
 
 .contenedorTarjetas {
+	margin-top: -0.5em;
 	background-color: #E2E4E6;
 	width: 100%;
 	padding: 3%;
+	/*
+	border: 2px solid yellow;
+	*/	
 }
