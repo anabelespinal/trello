@@ -1,47 +1,51 @@
-window.addEventListener("load", trello);
+window.addEventListener("load", function(){
+  var ids = 1;
+  var trelloObject = new Trello();
+  function Trello(){
+    // nonbrando a los elementos de html
+    this.anadirLista = document.getElementById("anadirLista");
+    this.contenedor = document.getElementById("contenedor");
+    this.formCreado = document.getElementById("formCreado");
+    this.inputCreado = document.getElementById("inputCreado");
+    this.botonCreado = document.getElementById("botonCreado");
+    this.tarjetasContenedor = document.getElementById("tarjetasContenedor");
 
- var ids = 1;
-function trello(){
-  var anadirLista = document.getElementById("anadirLista");
-  var contenedor = document.getElementById("contenedor");
-  var formCreado = document.getElementById("formCreado");
-  var inputCreado = document.getElementById("inputCreado");
-  var botonCreado = document.getElementById("botonCreado");
-  var tarjetasContenedor = document.getElementById("tarjetasContenedor");
-
-  anadirLista.addEventListener("click", function(){
-    aparecerForm();
-  });
-
-  function aparecerForm(){
-    anadirLista.style.display = "none";
-    formCreado.style.display = "inline-block";
-    inputCreado.focus();
+    this.anadirLista.addEventListener("click", function(){
+      trelloObject.anadirLista.style.display = "none";
+      trelloObject.formCreado.style.display = "inline-block";
+      trelloObject.inputCreado.focus();
+    });
   }
+  trelloObject.botonCreado.addEventListener("click", ejcutarNombre);
+  var ejcutarNombre = new NombresLista(trelloObject.inputCreado.value);
 
-  botonCreado.addEventListener("click", function(e){
-    e.preventDefault();
-    formCreado.style.display = "none";
-    var nombreLista = document.createElement("span");
-    var anadirTarjeta = document.createElement("button");
-    nombreLista.innerText = inputCreado.value;
-  
-    nombreLista.setAttribute("id", "nombreLista")
-    anadirTarjeta.innerText = "añadir tarjetas";
-    anadirTarjeta.setAttribute("id", "anadirTarjeta");
-    anadirLista.parentElement.appendChild(nombreLista);
-    anadirLista.parentElement.appendChild(anadirTarjeta);
-    inputCreado.value = "";
-    var contenedorTarjetas = document.createElement("div");
-    anadirTarjeta.parentElement.insertBefore(contenedorTarjetas, anadirTarjeta.parentElement.children[3]);
-      contenedorTarjetas.setAttribute("class", "contenedorTarjetas");
+  function NombresLista(valor){
+    trelloObject.formCreado.style.display = "none";
+    this.nombreLista = document.createElement("span");
+    this.anadirTarjeta = document.createElement("button");
+    ejcutarNombre.nombreLista.innerText = valor; //ver error
 
-    nuevoDiv();
+    ejcutarNombre.nombreLista.setAttribute("id", "nombreLista");
+    ejcutarNombre.anadirTarjeta.innerText = "añadir tarjetas";
+    ejcutarNombre.anadirTarjeta.setAttribute("id", "anadirTarjeta");
+    trelloObject.anadirLista.parentElement.appendChild(ejcutarNombre.nombreLista);
+    trelloObject.anadirLista.parentElement.appendChild(ejcutarNombre.anadirTarjeta);
+    trelloObject.inputCreado.value = "";
 
-    anadirTarjeta.addEventListener("click", function(){
-      anadirTarjeta.style.display = "none";
+    this.contenedorTarjetas = document.createElement("div");
+    ejcutarNombre.anadirTarjeta.parentElement.insertBefore(ejcutarNombre.contenedorTarjetas, ejcutarNombre.anadirTarjeta.parentElement.children[3]);
+    ejcutarNombre.contenedorTarjetas.setAttribute("class", "contenedorTarjetas");
+
+    nuevoDiv();//llamando a la funcion del contenedor nuevo
+  // dando el evento para añadir tarjetas
+    ejcutarNombre.anadirTarjeta.addEventListener("click", crearTarjetas);
+
+    function crearTarjetas(){
+      ejcutarNombre.anadirTarjeta.style.display = "none";
+
+      // creando el form para el texarea
       var newForm = document.createElement("form");
-      contenedorTarjetas.appendChild(newForm);
+      ejcutarNombre.contenedorTarjetas.appendChild(newForm);
       newForm.setAttribute("class","newForm")
       var textArea = document.createElement("textarea");
       newForm.appendChild(textArea);
@@ -52,54 +56,55 @@ function trello(){
       boton.setAttribute("class", "boton");
       boton.innerText = "GUARDAR";
 
+      // evento para añadir una nueva tarjeta
       boton.addEventListener("click", function(e){
         e.preventDefault();
         newForm.style.display = "none";
+
+        // span que tendra la nueva tarjeta
         var newTarjeta = document.createElement("span");
         newTarjeta.innerText = textArea.value
-        contenedorTarjetas.appendChild(newTarjeta);
-        contenedorTarjetas.parentElement.appendChild(anadirTarjeta);
+        ejcutarNombre.contenedorTarjetas.appendChild(newTarjeta);
+        ejcutarNombre.contenedorTarjetas.parentElement.appendChild(ejcutarNombre.anadirTarjeta);
         newTarjeta.setAttribute("class", "newTarjeta");
         newTarjeta.setAttribute("id", ids++);
         newTarjeta.setAttribute("draggable", "true");
-        anadirTarjeta.style.display = "inline-block";
+        ejcutarNombre.anadirTarjeta.style.display = "inline-block";
+
+        // funciones para el drag and drop
         function dragStart(event){
           event.dataTransfer.setData("text", event.target.id);
-        };
+        }
         function allowDrop(event){
           event.preventDefault();
-        };
+        }
         function drop(event){
           event.preventDefault();
           var data = event.dataTransfer.getData("text");
           event.target.parentNode.appendChild(document.getElementById(data));
+
+          // validando el appendChild para mover las tarjetas
           if (event.target.firstChild.nextSibling == null){
             event.target.appendChild(document.getElementById(data));
           }else if (event.target.firstChild.nextSibling != null ){
             event.target.insertBefore(document.getElementById(data), event.target.children[1]);
-            alert("esto es null");
           }
-        };
+        }
 
-        contenedorTarjetas.addEventListener("drop", function(event){
-          drop(event);
-        });
-        contenedorTarjetas.addEventListener("dragover", function(event){
-          allowDrop(event);
-        });
-        newTarjeta.addEventListener("dragstart", function(event){
-          dragStart(event);
-        });
+        // nombrando los eventos para drag and drop
+        ejcutarNombre.contenedorTarjetas.addEventListener("drop", drop);
+        ejcutarNombre.contenedorTarjetas.addEventListener("dragover",allowDrop);
+        newTarjeta.addEventListener("dragstart", dragStart);
       });
-    });
-  });
-
+    }
+  }
+//funcion para el nuevo contenedor
   function nuevoDiv(){
     var newDiv = document.createElement("div");
-    contenedor.appendChild(newDiv);
-    newDiv.setAttribute("class", "newDiv")
+    trelloObject.contenedor.appendChild(newDiv);
+    newDiv.setAttribute("class", "newDiv");
     newDiv.appendChild(anadirLista);
     newDiv.appendChild(formCreado);
-    anadirLista.style.display = "inline-block"
+    anadirLista.style.display = "inline-block";
   }
-}
+});
