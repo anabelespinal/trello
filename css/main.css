@@ -207,6 +207,7 @@ header form input {
 	height: 6em;
 	word-wrap: break-word;
 	margin-bottom: 3%;
+	resize: none;
 }
 
 .newForm {

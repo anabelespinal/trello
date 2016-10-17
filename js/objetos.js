@@ -15,24 +15,26 @@ window.addEventListener("load", function(){
       trelloObject.formCreado.style.display = "inline-block";
       trelloObject.inputCreado.focus();
     });
-    this.botonCreado.addEventListener("click", NombresLista);
+    this.botonCreado.addEventListener("click", function(){
+      NombresLista(trelloObject.inputCreado, anadirLista);
+    });
   }
 
-  function NombresLista(valor){
+  function NombresLista(valor, anadirLista){
     trelloObject.formCreado.style.display = "none";
     var nombreLista = document.createElement("span");
     var anadirTarjeta = document.createElement("button");
-    nombreLista.innerText = valor; //ver error
+    nombreLista.innerText = valor.value; //ver error
 
     nombreLista.setAttribute("id", "nombreLista");
     anadirTarjeta.innerText = "añadir tarjetas";
     anadirTarjeta.setAttribute("id", "anadirTarjeta");
     trelloObject.anadirLista.parentElement.appendChild(nombreLista);
     trelloObject.anadirLista.parentElement.appendChild(anadirTarjeta);
-    trelloObject.inputCreado.value = "";
+    valor.value = "";
 
-    contenedorTarjetas = document.createElement("div");
-    anadirTarjeta.parentElement.insertBefore(contenedorTarjetas, anadirTarjeta.parentElement.children[3]);
+    var contenedorTarjetas = document.createElement("div");
+    anadirLista.parentElement.insertBefore(contenedorTarjetas, anadirLista.parentElement.children[3]);
     contenedorTarjetas.setAttribute("class", "contenedorTarjetas");
 
     nuevoDiv();//llamando a la funcion del contenedor nuevo
@@ -76,8 +78,33 @@ window.addEventListener("load", function(){
     newTarjeta.setAttribute("id", ids++);
     newTarjeta.setAttribute("draggable", "true");
     anadirTarjeta.style.display = "inline-block";
+
+        // nombrando los eventos para drag and drop
+    contenedorTarjetas.addEventListener("drop", drop);
+    contenedorTarjetas.addEventListener("dragover",allowDrop);
+    newTarjeta.addEventListener("dragstart", dragStart);
+
   }
 
+  function dragStart(event){
+    event.dataTransfer.setData("text", event.target.id);
+    // event.setAttribute("class","bounce");
+  }
+  function allowDrop(event){
+    event.preventDefault();
+  }
+  function drop(event){
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text");
+    event.target.parentNode.appendChild(document.getElementById(data));
+
+    // validando el appendChild para mover las tarjetas
+    if (event.target.firstChild.nextSibling == null){
+      event.target.appendChild(document.getElementById(data));
+    }else if (event.target.firstChild.nextSibling != null ){
+      event.target.insertBefore(document.getElementById(data), event.target.children[1]);
+    }
+  }
 //funcion para el nuevo contenedor
   function nuevoDiv(){
     var newDiv = document.createElement("div");
