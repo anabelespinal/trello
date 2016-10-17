@@ -107,7 +107,7 @@ header form input {
 	height: auto;
 }
 
-#tarjetasContenedor {
+#listasContenedor {
 	display: inline-block;
 	position: relative;
 	top: 8em;
@@ -120,7 +120,7 @@ header form input {
 
 /*span*/
 
-#anadirLista {
+#anadirLista-js {
 	vertical-align: top;
 	position: relative;
 	top: 4%;
@@ -133,7 +133,7 @@ header form input {
 
 /*formulario*/
 
-#formCreado {
+#formHtml-js {
 	width: 100%;
 	vertical-align: top;
 	position: relative;
@@ -143,7 +143,7 @@ header form input {
 	border-radius: 0.5em;
 }
 
-#inputCreado {
+#inputHtml-js {
 	width: 100%;
 	display: block;
 	border-radius: 0.5em;
@@ -151,7 +151,7 @@ header form input {
 	padding: 4% 3%;
 }
 
-#botonCreado {
+#botonHtml-js {
 	margin-top: 5%;
 	padding: 2.5% 8%;
 	background-color: #34BF31;
@@ -190,7 +190,7 @@ header form input {
 
 /*nuevo contenedor*/
 
-.newDiv {
+.nuevaFila {
 	margin-right: 2%;
 	display: inline-block;
 	position: relative;
