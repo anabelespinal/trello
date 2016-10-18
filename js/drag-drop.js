@@ -5,8 +5,8 @@ function dragStart(event){
   event.target.style.color = "blue";
 }
 
-function allowDrop(event){
-  event.target.classList.add("bounce");
+function allowDrop(event){//contenedorTarjetas
+  event.target.style.color = "black";
   event.preventDefault();
 }
 
@@ -18,7 +18,7 @@ function drop(event){
   // for(var i = 0; i < a.length; i++){
   //  a[i].style.color = "yellow";
   // }
-  event.target.style.color = "yellow";
+  event.target.style.color = "black";
 
   // validando el appendChild para mover las tarjetas
   if (event.target.firstChild.nextSibling == null){

@@ -15,6 +15,6 @@ function nuevaTarjeta(anadirTarjeta,contenedorTarjetas, newForm, textArea){
 
   // nombrando los eventos para drag and drop
   contenedorTarjetas.addEventListener("drop", drop);
-  contenedorTarjetas.addEventListener("dragover",allowDrop);
+  contenedorTarjetas.addEventListener("dragover",allowDrop);// contetarjetas
   nuevaTarjeta.addEventListener("dragstart",dragStart);
 }
