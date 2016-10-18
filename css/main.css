@@ -108,7 +108,7 @@ section{
 }
 
 #contenedor {
-	vertical-align: top;
+	/*vertical-align: top;*/
 	height: auto;
 }
 
@@ -164,7 +164,8 @@ section{
 	padding: 3% 4%;
 	border-top-left-radius: 0.5em;
 	border-top-right-radius: 0.5em;
-	/*word-break: break-word;*/
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 .anadirTarjeta {
@@ -216,6 +217,8 @@ section{
 	height: auto;
 	padding: 2%;
 	margin-top: 0.5em;
+ 	word-wrap: break-word;
+  white-space: normal;
 }
 
 .contenedorTarjetas {
