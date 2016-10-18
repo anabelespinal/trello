@@ -30,8 +30,11 @@ body {
 header {
 	background-color: #1EB13D;
 	height: 5em;
-	width: 100%;
 	position: fixed;
+}
+
+header, #inputHtml-js, .textArea, .newTarjeta {
+	width: 100%;
 }
 
 .tableros {
@@ -56,47 +59,36 @@ header form input {
 }
 
 .buscar{
-/*	position: relative;*/
-	/*display: inline-block;*/
 	right: -1.5em;
 }
 
 .trello-logo {
-	/*display: inline-block;*/
-	/*position: relative;*/
 	left: 22%;
 	width: 100px;
 }
 
 .mas {
-	/*position: relative;*/
 	left: 41em;
 }
 
 .perfil {
-	/*display: inline-block;*/
-	/*position: relative;*/
 	left: 42%;
 }
 
 .foto-perfil {
-	/*display: inline-block;*/
 	width: 3em;
 	height: 2.5em;
 	margin-right: -3.2em;
 }
 
 .ico {
-	/*position: relative;*/
 	left: 46%;
 }
 
 .globe {
 	background-color: #EF4949;
-	/*position: relative;*/
 	left: 46%;
 }
-
 
 /*contenedor general*/
 section{
@@ -109,21 +101,17 @@ section{
 }
 
 #listasContenedor {
-	/*display: inline-block;*/
-	/*position: relative;*/
 	top: 8em;
 	left: 3%;
+	margin-right: 4%;
+}
+#listasContenedor, .nuevaFila {
 	width: 20%;
-	margin-right: 5%;
-	/*vertical-align: top;*/
-	/*white-space: wrap; */
 }
 
 /*span*/
 
 #anadirLista-js {
-	/*vertical-align: top;*/
-	/*position: relative;*/
 	top: 4%;
 	left: 4%;
 	background-color: #2FC332;
@@ -133,18 +121,18 @@ section{
 }
 
 /*formulario*/
+#formHtml-js, #nombreLista, #anadirTarjeta, .contenedorTarjetas{
+	width: 95%;
+}
 
 #formHtml-js {
 	margin-left: 1.7em;
-	width: 95%;
-	/*vertical-align: top;*/
 	padding: 3%;
 	background-color: #E2E4E6;
 	border-radius: 0.5em;
 }
 
 #inputHtml-js {
-	width: 100%;
 	display: block;
 	border-radius: 0.5em;
 	border: none;
@@ -171,19 +159,15 @@ section{
 	border-top-left-radius: 0.5em;
 	border-top-right-radius: 0.5em;
 	word-wrap: break-word;
-	width: 95%;
-	/*vertical-align: top;*/
 }
 
 #anadirTarjeta {
 	margin-left: 2em;
-	width: 95%;
 	border: none;
 	padding: 3% 0;
 	background-color: #E2E4E6;
 	border-bottom-right-radius: 0.5em;
 	border-bottom-left-radius: 0.5em;
-	/*vertical-align: top;*/
 }
 
 #anadirTarjeta:hover {
@@ -194,17 +178,13 @@ section{
 
 .nuevaFila {
 	margin-right: 2%;
-	/*display: inline-block;*/
-	/*position: relative;*/
 	top: 8em;
-	width: 20%;
 	vertical-align: top;
 }
 
 /*textarea nuevo*/
 
 .textArea {
-	width: 100%;
 	display: block;
 	height: 6em;
 	word-wrap: break-word;
@@ -226,7 +206,6 @@ section{
 
 .newTarjeta {
 	background-color: #F3EDED;
-	width: 100%;
 	display: block;
 	height: auto;
 	padding: 2%;
@@ -237,11 +216,7 @@ section{
 	margin-left: 2em;
 	margin-top: -0.5em;
 	background-color: #E2E4E6;
-	width: 95%;
-	padding: 3%;
-	/*
-	border: 2px solid yellow;
-	*/	
+	padding: 3%;	
 }
 
 @media (max-width: 1024px){
