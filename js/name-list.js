@@ -5,9 +5,9 @@ function nombrarListas(valor, spanAnadirLista){
   var anadirTarjeta = document.createElement("button");
   nombreLista.innerText = valor.value;
 
-  nombreLista.setAttribute("id", "nombreLista");
+  nombreLista.setAttribute("class", "nombreLista");
   anadirTarjeta.innerText = "añadir tarjetas";
-  anadirTarjeta.setAttribute("id", "anadirTarjeta");
+  anadirTarjeta.setAttribute("class", "anadirTarjeta");
   trelloObject.spanAnadirLista.parentElement.appendChild(nombreLista);
   trelloObject.spanAnadirLista.parentElement.appendChild(anadirTarjeta);
   valor.value = "";

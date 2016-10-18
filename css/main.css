@@ -15,6 +15,27 @@
     border-radius: 1em;
 }
 
+/*generales*/
+
+header, #inputHtml-js, .textArea, .newTarjeta {
+	width: 100%;
+}
+
+header form, .buscar, .trello-logo, .perfil, .foto-perfil, #listasContenedor, .nuevaFila {
+	display: inline-block;
+}
+
+.buscar,.trello-logo, .mas, .perfil, .ico, .globe, #listasContenedor, #anadirLista-js, .nuevaFila{
+		position: relative;
+}
+
+#formHtml-js, .nombreLista, .anadirTarjeta, .contenedorTarjetas{
+	width: 95%;
+}
+
+#listasContenedor, .nuevaFila {
+	width: 20%;
+}
 /*body*/
 
 * {
@@ -33,17 +54,11 @@ header {
 	position: fixed;
 }
 
-header, #inputHtml-js, .textArea, .newTarjeta {
-	width: 100%;
-}
 
 .tableros {
 	margin: 1%;
 }
 
-header form, .buscar, .trello-logo, .perfil, .foto-perfil, #listasContenedor, .nuevaFila {
-	display: inline-block;
-}
 
 header form input {
 	background-color: #3CD05F;
@@ -54,9 +69,6 @@ header form input {
 	border: none;
 }
 
-.buscar,.trello-logo, .mas, .perfil, .ico, .globe, #listasContenedor, #anadirLista-js, .nuevaFila{
-		position: relative;
-}
 
 .buscar{
 	right: -1.5em;
@@ -105,9 +117,6 @@ section{
 	left: 3%;
 	margin-right: 4%;
 }
-#listasContenedor, .nuevaFila {
-	width: 20%;
-}
 
 /*span*/
 
@@ -121,9 +130,6 @@ section{
 }
 
 /*formulario*/
-#formHtml-js, #nombreLista, #anadirTarjeta, .contenedorTarjetas{
-	width: 95%;
-}
 
 #formHtml-js {
 	margin-left: 1.7em;
@@ -149,7 +155,7 @@ section{
 
 /*elemntos creados desde js*/
 
-#nombreLista {
+.nombreLista {
 	margin-left: 2em;
 	display: block;
 	font-family: cursive;
@@ -158,10 +164,10 @@ section{
 	padding: 3% 4%;
 	border-top-left-radius: 0.5em;
 	border-top-right-radius: 0.5em;
-	word-wrap: break-word;
+	/*word-break: break-word;*/
 }
 
-#anadirTarjeta {
+.anadirTarjeta {
 	margin-left: 2em;
 	border: none;
 	padding: 3% 0;
@@ -170,7 +176,7 @@ section{
 	border-bottom-left-radius: 0.5em;
 }
 
-#anadirTarjeta:hover {
+.anadirTarjeta:hover {
 	background-color: #CDC9C9;
 }
 
