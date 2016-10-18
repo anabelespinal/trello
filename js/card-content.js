@@ -14,6 +14,16 @@ function formCrearTarjetas(anadirTarjeta, contenedorTarjetas){
   boton.setAttribute("class", "boton");
   boton.innerText = "AÑADIR";
 
+  boton.disabled = true;
+  textArea.addEventListener("keyup", function(){
+    var nn = textArea.value.length;
+    if (nn <= 0){
+      boton.disabled = true;
+    }else if (nn >= 1){
+      boton.disabled = false;
+    }
+  });
+
   // evento para añadir una nueva tarjeta
   boton.addEventListener("click", function(e){
     e.preventDefault();

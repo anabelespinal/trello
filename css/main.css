@@ -7,6 +7,7 @@
 
 ::-webkit-scrollbar {
     height: 12px;
+    width: 0.3em;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -18,8 +19,6 @@
 
 * {
 	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
 }
 
 body {
@@ -39,7 +38,7 @@ header {
 	margin: 1%;
 }
 
-header form {
+header form, .buscar, .trello-logo, .perfil, .foto-perfil, #listasContenedor, .nuevaFila {
 	display: inline-block;
 }
 
@@ -52,45 +51,49 @@ header form input {
 	border: none;
 }
 
+.buscar,.trello-logo, .mas, .perfil, .ico, .globe, #listasContenedor, #anadirLista-js, .nuevaFila{
+		position: relative;
+}
+
 .buscar{
-	position: relative;
-	display: inline-block;
+/*	position: relative;*/
+	/*display: inline-block;*/
 	right: -1.5em;
 }
 
 .trello-logo {
-	display: inline-block;
-	position: relative;
+	/*display: inline-block;*/
+	/*position: relative;*/
 	left: 22%;
 	width: 100px;
 }
 
 .mas {
-	position: relative;
+	/*position: relative;*/
 	left: 41em;
 }
 
 .perfil {
-	display: inline-block;
-	position: relative;
+	/*display: inline-block;*/
+	/*position: relative;*/
 	left: 42%;
 }
 
 .foto-perfil {
-	display: inline-block;
+	/*display: inline-block;*/
 	width: 3em;
 	height: 2.5em;
 	margin-right: -3.2em;
 }
 
 .ico {
-	position: relative;
+	/*position: relative;*/
 	left: 46%;
 }
 
 .globe {
 	background-color: #EF4949;
-	position: relative;
+	/*position: relative;*/
 	left: 46%;
 }
 
@@ -106,21 +109,21 @@ section{
 }
 
 #listasContenedor {
-	display: inline-block;
-	position: relative;
+	/*display: inline-block;*/
+	/*position: relative;*/
 	top: 8em;
 	left: 3%;
 	width: 20%;
 	margin-right: 5%;
-	vertical-align: top;
+	/*vertical-align: top;*/
 	/*white-space: wrap; */
 }
 
 /*span*/
 
 #anadirLista-js {
-	vertical-align: top;
-	position: relative;
+	/*vertical-align: top;*/
+	/*position: relative;*/
 	top: 4%;
 	left: 4%;
 	background-color: #2FC332;
@@ -134,7 +137,7 @@ section{
 #formHtml-js {
 	margin-left: 1.7em;
 	width: 95%;
-	vertical-align: top;
+	/*vertical-align: top;*/
 	padding: 3%;
 	background-color: #E2E4E6;
 	border-radius: 0.5em;
@@ -169,7 +172,7 @@ section{
 	border-top-right-radius: 0.5em;
 	word-wrap: break-word;
 	width: 95%;
-	vertical-align: top;
+	/*vertical-align: top;*/
 }
 
 #anadirTarjeta {
@@ -180,7 +183,7 @@ section{
 	background-color: #E2E4E6;
 	border-bottom-right-radius: 0.5em;
 	border-bottom-left-radius: 0.5em;
-	vertical-align: top;
+	/*vertical-align: top;*/
 }
 
 #anadirTarjeta:hover {
@@ -191,8 +194,8 @@ section{
 
 .nuevaFila {
 	margin-right: 2%;
-	display: inline-block;
-	position: relative;
+	/*display: inline-block;*/
+	/*position: relative;*/
 	top: 8em;
 	width: 20%;
 	vertical-align: top;
@@ -299,7 +302,10 @@ section{
 		margin-left: 2em;
 	}
 }
-@media (max-width: 250px){
+@media (max-width: 270px){
+	.trello-logo {
+		margin-left: 2em;
+	}
 	#listasContenedor{
 		margin-left: -11%;
 	}

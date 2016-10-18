@@ -32,4 +32,14 @@ function contenedorNuevaLista(){
   nuevaFila.appendChild(trelloObject.spanAnadirLista);
   nuevaFila.appendChild(trelloObject.formHtml);
   trelloObject.spanAnadirLista.style.display = "inline-block";
+  
+  trelloObject.botonHtml.disabled = true;
+  trelloObject.inputHtml.addEventListener("keyup", function(){
+    var nn = trelloObject.inputHtml.value.length;
+    if (nn <= 0){
+      trelloObject.botonHtml.disabled = true;
+    }else if (nn >= 1){
+      trelloObject.botonHtml.disabled = false;
+    }
+  });
 }

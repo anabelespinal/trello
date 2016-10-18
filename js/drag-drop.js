@@ -2,9 +2,11 @@
 
 function dragStart(event){
   event.dataTransfer.setData("text", event.target.id);
+  event.target.style.color = "blue";
 }
 
 function allowDrop(event){
+  event.target.classList.add("bounce");
   event.preventDefault();
 }
 
@@ -12,6 +14,11 @@ function drop(event){
   event.preventDefault();
   var data = event.dataTransfer.getData("text");
   event.target.parentNode.appendChild(document.getElementById(data));
+  // var a = document.querySelectorAll(".contenedorTarjetas");
+  // for(var i = 0; i < a.length; i++){
+  //  a[i].style.color = "yellow";
+  // }
+  event.target.style.color = "yellow";
 
   // validando el appendChild para mover las tarjetas
   if (event.target.firstChild.nextSibling == null){

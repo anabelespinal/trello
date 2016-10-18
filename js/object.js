@@ -16,6 +16,17 @@ function TrelloConstructor(){
     trelloObject.formHtml.style.display = "inline-block";
     trelloObject.inputHtml.focus();
   });
+
+  this.botonHtml.disabled = true;
+  this.inputHtml.addEventListener("keyup", function(){
+    var nn = trelloObject.inputHtml.value.length;
+    if (nn <= 0){
+      trelloObject.botonHtml.disabled = true;
+    }else if (nn >= 1){
+      trelloObject.botonHtml.disabled = false;
+    }
+  });
+
   this.botonHtml.addEventListener("click", function(){
     nombrarListas(trelloObject.inputHtml, trelloObject.spanAnadirLista);
   });
