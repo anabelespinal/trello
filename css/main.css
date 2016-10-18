@@ -62,11 +62,7 @@ header form input {
 	display: inline-block;
 	position: relative;
 	left: 22%;
-	width: 9%;
-}
-
-.trello-logo:hover {
-	width: 10%;
+	width: 100px;
 }
 
 .mas {
@@ -100,9 +96,11 @@ header form input {
 
 
 /*contenedor general*/
+section{
+	white-space: nowrap;
+}
 
 #contenedor {
-	white-space: nowrap;
 	vertical-align: top;
 	height: auto;
 }
@@ -115,7 +113,7 @@ header form input {
 	width: 20%;
 	margin-right: 5%;
 	vertical-align: top;
-	white-space: wrap; 
+	/*white-space: wrap; */
 }
 
 /*span*/
@@ -134,10 +132,9 @@ header form input {
 /*formulario*/
 
 #formHtml-js {
-	width: 100%;
+	margin-left: 1.7em;
+	width: 95%;
 	vertical-align: top;
-	position: relative;
-	left: 8%;
 	padding: 3%;
 	background-color: #E2E4E6;
 	border-radius: 0.5em;
@@ -162,6 +159,7 @@ header form input {
 /*elemntos creados desde js*/
 
 #nombreLista {
+	margin-left: 2em;
 	display: block;
 	font-family: cursive;
 	background-color: #E2E4E6;
@@ -170,12 +168,13 @@ header form input {
 	border-top-left-radius: 0.5em;
 	border-top-right-radius: 0.5em;
 	word-wrap: break-word;
-	width: 100%;
+	width: 95%;
 	vertical-align: top;
 }
 
 #anadirTarjeta {
-	width: 100%;
+	margin-left: 2em;
+	width: 95%;
 	border: none;
 	padding: 3% 0;
 	background-color: #E2E4E6;
@@ -232,11 +231,85 @@ header form input {
 }
 
 .contenedorTarjetas {
+	margin-left: 2em;
 	margin-top: -0.5em;
 	background-color: #E2E4E6;
-	width: 100%;
+	width: 95%;
 	padding: 3%;
 	/*
 	border: 2px solid yellow;
 	*/	
+}
+
+@media (max-width: 1024px){
+	header .tableros,
+	header form,
+	header form input,
+	.buscar,
+	.perfil,
+	header button.ico,
+	.globe,
+	.mas{
+		display: none;
+	}
+	.trello-logo{
+		margin-top: 1em;
+		margin-left: 23%;
+	}
+}
+@media (max-width: 800px){
+	#listasContenedor, .nuevaFila{
+		width: 35%;
+	}
+}
+@media (max-width: 600px){
+	.trello-logo{
+		margin-left: 20%;
+	}
+	#listasContenedor{
+		display: block;
+	}
+	.nuevaFila{
+		display: block;
+		margin-top: 2em;
+	}
+	#listasContenedor, .nuevaFila{
+		width: 100%;
+		text-align: center;
+	}
+	#listasContenedor{
+		margin-left: -5%;
+	}
+	.nuevaFila{
+		margin-left: -2%;
+	}
+	#anadirTarjeta{
+		margin-left: 1.9em;
+	}
+}
+@media (max-width: 400px){
+	
+	#listasContenedor{
+		margin-left: -7.3%;
+	}
+	.nuevaFila{
+		margin-left: -4.2%;
+	}
+	#anadirTarjeta{
+		margin-left: 2em;
+	}
+}
+@media (max-width: 250px){
+	#listasContenedor{
+		margin-left: -11%;
+	}
+	.nuevaFila{
+		margin-left: -8%;
+	}
+	#anadirTarjeta{
+		margin-left: 2em;
+	}
+	#anadirLista-js{
+		margin-left: 1.5em;
+	}
 }
