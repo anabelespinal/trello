@@ -35,10 +35,10 @@ function contenedorNuevaLista(){
   
   trelloObject.botonHtml.disabled = true;
   trelloObject.inputHtml.addEventListener("keyup", function(){
-    var nn = trelloObject.inputHtml.value.length;
-    if (nn <= 0){
+    var longitud = trelloObject.inputHtml.value.length;
+    if (longitud <= 0){
       trelloObject.botonHtml.disabled = true;
-    }else if (nn >= 1){
+    }else if (longitud >= 1){
       trelloObject.botonHtml.disabled = false;
     }
   });

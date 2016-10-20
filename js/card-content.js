@@ -16,10 +16,10 @@ function formCrearTarjetas(anadirTarjeta, contenedorTarjetas){
 
   boton.disabled = true;
   textArea.addEventListener("keyup", function(){
-    var nn = textArea.value.length;
-    if (nn <= 0){
+    var longitud = textArea.value.length;
+    if (longitud <= 0){
       boton.disabled = true;
-    }else if (nn >= 1){
+    }else if (longitud >= 1){
       boton.disabled = false;
     }
   });
