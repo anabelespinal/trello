@@ -254,12 +254,13 @@ section{
 	.trello-logo{
 		margin-left: 20%;
 	}
-	#listasContenedor{
+/*	#listasContenedor{
 		display: block;
-	}
+	}*/
 	.nuevaFila{
-		display: block;
-		margin-top: 2em;
+		/*display: block;*/
+		/*vertical-align: top;*/
+		/*margin-top: 2em;*/
 	}
 	#listasContenedor, .nuevaFila{
 		width: 100%;
@@ -291,12 +292,12 @@ section{
 	.trello-logo {
 		margin-left: 2em;
 	}
-	#listasContenedor{
+/*	#listasContenedor{
 		margin-left: -11%;
 	}
 	.nuevaFila{
 		margin-left: -8%;
-	}
+	}*/
 	#anadirTarjeta{
 		margin-left: 2em;
 	}
