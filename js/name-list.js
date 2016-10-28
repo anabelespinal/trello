@@ -20,7 +20,7 @@ function nombrarListas(valor, spanAnadirLista){
   contenedorNuevaLista();
 
   anadirTarjeta.addEventListener("click", function(){
-    formCrearTarjetas(anadirTarjeta, contenedorTarjetasNuevas);
+    formCrearTarjetas(anadirTarjeta, contenedorTarjetasNuevas, nombreLista.innerText);
   });
 }
 

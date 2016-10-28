@@ -229,6 +229,25 @@ section{
 	padding: 3%;	
 }
 
+/*modal*/
+
+h4 + textarea {
+	width: 48%;
+}
+#checklist, #b-check{
+	display: inline-block;
+}
+#checklist{
+	width: 80%;
+}
+
+div[class="modal-dialog modal-sm"]{
+	position: relative;
+  top: 11em;
+  left: 23.2em;
+}
+
+
 @media (max-width: 1024px){
 	header .tableros,
 	header form,

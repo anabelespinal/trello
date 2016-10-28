@@ -1,4 +1,4 @@
-function formCrearTarjetas(anadirTarjeta, contenedorTarjetas){
+function formCrearTarjetas(anadirTarjeta, contenedorTarjetas, valor2){
   anadirTarjeta.style.display = "none";
 
   // creando el form para el texarea
@@ -27,6 +27,6 @@ function formCrearTarjetas(anadirTarjeta, contenedorTarjetas){
   // evento para añadir una nueva tarjeta
   boton.addEventListener("click", function(e){
     e.preventDefault();
-    nuevaTarjeta(anadirTarjeta,contenedorTarjetas, nuevoForm, textArea);
+    nuevaTarjeta(anadirTarjeta,contenedorTarjetas, nuevoForm, textArea, valor2);
   });
 }
