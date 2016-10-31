@@ -230,7 +230,10 @@ section{
 }
 
 /*modal*/
-#b-check, button[type="button"][class="btn"], textarea + button{
+.modal-body input{
+	margin-bottom: 1em;
+} 
+#b-check, button[type="button"][class="btn"], textarea + button, #botonCheck{
 	/*background-color: rgba(58, 103, 9, 0.77);
 	color: black;*/
 	  border: none;
