@@ -1,10 +1,10 @@
 function nombrarListas(valor, spanAnadirLista){
-  trelloObject.formHtml.style.display = "none";
+  trelloObject.formHtml.style.display = "none"; 
   // creando el span para el nombre de la lista y el boton para añadir tarjeta
   var nombreLista = document.createElement("span");
   var anadirTarjeta = document.createElement("button");
   nombreLista.innerText = valor.value;
-
+ 
   nombreLista.setAttribute("class", "nombreLista");
   anadirTarjeta.innerText = "añadir tarjetas";
   anadirTarjeta.setAttribute("class", "anadirTarjeta");

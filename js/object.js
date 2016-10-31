@@ -1,8 +1,8 @@
 // window.addEventListener("load", function(){
 //   // var trelloObject = new Trello();
 // });
-var trelloObject = new TrelloConstructor();
-
+var trelloObject = new TrelloConstructor(); 
+  
 function TrelloConstructor(){
   // nonbrando a los elementos de html
   this.spanAnadirLista = document.getElementById("anadirLista-js");

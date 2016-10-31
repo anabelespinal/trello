@@ -1,12 +1,12 @@
 function formCrearTarjetas(anadirTarjeta, contenedorTarjetas, valor2){
   anadirTarjeta.style.display = "none";
-
+  
   // creando el form para el texarea
   var nuevoForm = document.createElement("form");
   contenedorTarjetas.appendChild(nuevoForm);
   nuevoForm.setAttribute("class","newForm");
   var textArea = document.createElement("textarea");
-  nuevoForm.appendChild(textArea);
+  nuevoForm.appendChild(textArea);  
   textArea.focus();  
   textArea.setAttribute("class", "textArea");
   var boton = document.createElement("button");

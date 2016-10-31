@@ -1,6 +1,6 @@
 // funciones de drag and drop
 
-function dragStart(event){
+function dragStart(event){  
   event.dataTransfer.setData("text", event.target.id);
   event.target.style.color = "blue";
 }
@@ -8,7 +8,7 @@ function dragStart(event){
 function allowDrop(event){//contenedorTarjetas
   event.target.style.color = "black";
   event.preventDefault();
-}
+}  
 
 function drop(event){
   event.preventDefault();

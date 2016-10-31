@@ -1,10 +1,10 @@
-var ids = 1;
+var ids = 1;  
 
 function nuevaTarjeta(anadirTarjeta,contenedorTarjetas, newForm, textArea, valor2){
   newForm.style.display = "none";
 
-  // span que tendra la nueva tarjeta
-  var nuevaTarjeta = document.createElement("span");
+  // span que tendra la nueva tarjeta 
+  var nuevaTarjeta = document.createElement("span"); 
   nuevaTarjeta.innerText = textArea.value;
   contenedorTarjetas.appendChild(nuevaTarjeta);
   contenedorTarjetas.parentElement.appendChild(anadirTarjeta);
@@ -23,7 +23,7 @@ function nuevaTarjeta(anadirTarjeta,contenedorTarjetas, newForm, textArea, valor
   contenedorTarjetas.addEventListener("drop", drop);
   contenedorTarjetas.addEventListener("dragover",allowDrop);// contetarjetas
   nuevaTarjeta.addEventListener("dragstart",dragStart);
-  nuevaTarjeta.addEventListener("click", function(){
-    modalUno(nuevaTarjeta.innerText, valor2);
-  });
+  // nuevaTarjeta.addEventListener("click", function(){
+  //   modalUno(nuevaTarjeta.innerText, valor2);
+  // });
 }
