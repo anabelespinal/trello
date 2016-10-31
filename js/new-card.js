@@ -24,6 +24,6 @@ function nuevaTarjeta(anadirTarjeta,contenedorTarjetas, newForm, textArea, valor
   contenedorTarjetas.addEventListener("dragover",allowDrop);// contetarjetas
   nuevaTarjeta.addEventListener("dragstart",dragStart);
   // nuevaTarjeta.addEventListener("click", function(){
-  //   modalUno(nuevaTarjeta.innerText, valor2);
+    modalUno(nuevaTarjeta.innerText, valor2);
   // });
 }
